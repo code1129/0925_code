@@ -1,0 +1,16 @@
+====WAIT QUEUE INTRODUCE =========
+1、什么时等待队列
+等待队列是linux kernel实现的一种进程休眠机制。是linux内核的一种较基础的并发控制技术。
+
+2、等待队列的原理
+从本质上说，等待队列是允许当前进程休眠，以释放CPU资源来运行其他的用户空间和内核空间进程。
+
+
+3、等待队列的唤醒
+wake_up  wake_up_interruptible宏会唤醒等待队列链表上所有的等待队列，至于哪一个等待队列会被系统调度，
+由系统的调度算法决定。
+
+4、常用的API
+实际应用中经常会用到 初始化、休眠和唤醒的宏
+
+比如：init_waitqueue_head(); wait_event_interruptible(); wake_up_interruptbile()
